@@ -1,0 +1,41 @@
+<div class="toolbar" role="banner">
+  <p>
+    {{name}}
+  </p>
+  <div *ngFor ="let pagina of barrraIzq">
+    <h3>
+        {{pagina.name}}
+    </h3>
+  </div>
+</div>
+
+<div>
+  <img src="assets/002.jpg" alt="Imagen fondo" class="imagenfondo">
+</div>
+
+<h1 class= "centerTitulo">juguetes</h1>
+
+<div class="juguetes">
+    <div *ngFor ="let juguete of juguetes" style="align-self: center">
+      <div>
+        <h3>
+          <a [title]="juguete.name" >
+            {{juguete.name}}
+          </a>
+        </h3>
+        <img src="{{juguete.imag}}" alt="{{juguete.name}}" 
+        class="imagenjuguete" [title]="juguete.name">
+        <div>
+          <p *ngIf="juguete.description">
+              Descripcion: {{juguete.description}}
+          </p>
+          <button (click)="comprar()">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+<h1 class= "centerTitulo">Mas articulos Proximamente</h1>

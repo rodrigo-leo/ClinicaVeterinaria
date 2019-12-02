@@ -1,0 +1,67 @@
+<div class="fondoverde">
+        <h1>Adquiere un nuevo compañero.</h1>
+        <p>
+            Un Nuevo amigo de cuatro patas nos acompañara y cuidara de nosotros por toda su vida, 
+            asi que ellos merecen ser cuidados de la misma forma.
+        </p>
+        <a class="nav-link" [routerLink]="['Home']">Regresar al inicio</a>
+    </div>
+    
+    <div class="juguetes">
+        <div *ngFor = "let mascota of mascotas">
+            <div>
+                <img src="{{mascota.imagen}}" alt="{{mascota.imagen}}"
+                class="card-img-top" [title] = "mascota.nombre">
+                <h3 class="card-title">
+                <a [title]="mascota.nombre" >
+                    {{mascota.nombre}}
+                </a>
+                </h3>
+                <div class="card-body">
+                    <p *ngIf="mascota.raza" class="card-text" class="form-text text-muted">
+                        Raza: {{mascota.raza}}
+                    </p>
+                    <p *ngIf="mascota.descripcion" class="card-text" >
+                        Acerca: {{mascota.descripcion}}
+                    </p>
+                    <button type="button" class="btn btn-primary">
+                        Comprar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="contactanos">
+        <div >
+            <h1>Contactanos.</h1>
+            <p>
+                Nuestras mascotas estan a la espera de encontrrar un nuevo hogar, si puedes ofrecerles 
+                una nueva familia no dudes en informarnos.<br>
+                <a href="{{Facebook}}">Facebook</a>
+            </p>
+        </div>
+        <div>
+            <form>
+                <div class="form-group">
+                    <input class="form-control " type="text" placeholder="Nombre del solicitante">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                  placeholder="email">
+                  <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo con terceros.</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+    </div>
+    

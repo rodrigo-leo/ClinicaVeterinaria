@@ -1,0 +1,32 @@
+import { Component } from '@angular/core';
+import { Compra} from './compra';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title : String;
+  name : String;
+  email : String;
+  barraIzq : String[];
+  enlaces : String[];
+  facebook : String;
+  juguetes = [
+    new Compra(1, 'Cajas para mascota',1948.80,"caja para regalo","assets/010.jpg"),
+    new Compra(2, 'Paliacates para Perro',459.00, "Collar con tela decorativa","assets/011.jpg"),
+    new Compra(3, 'Juguetes para masticar',379.99, "Para perros en crecimiento","assets/012.jpg"),
+    new Compra(4, 'Cepillo de dientes para perro',298.99,"Para perros de todas las edades","assets/013.jpg")
+  ];
+  miCompra = this.juguetes[0];
+
+  constructor(){
+  this.title = "Veterinaria";
+  this.name = "Firulais®";
+  this.email = "";
+  this.barraIzq = ["Programar cita", "Adoptame", "Mascotas Disponibles"];
+  this.enlaces = ["Facebook","Twitter","Instagram"];
+  this.facebook = "https://www.Facebook.com";
+  }
+}

@@ -1,0 +1,30 @@
+<div>
+<img src="assets/002.jpg" alt="Imagen fondo" class="imagenfondo">
+</div>
+
+<h1 class= "centerTitulo">juguetes</h1>
+
+<div class="juguetes">
+    <div *ngFor ="let juguete of juguetes" sclass="card" style="width: 30%;">
+    <div>
+        <img src="{{juguete.imag}}" alt="{{juguete.name}}" 
+        class="card-img-top" [title] = "juguete.name" >
+        <h3 class="card-title">
+        <a [title]="juguete.name" >
+            {{juguete.name}}
+        </a>
+        </h3>
+        <div class="card-body">
+            <p *ngIf="juguete.description" class="card-text">
+                Descripcion: {{juguete.description}}
+            </p>
+            <button type="button" class="btn btn-primary">
+                Comprar
+            </button>
+        </div>
+    </div>
+    </div>
+</div>
+      
+<h1 class= "centerTitulo">Mas articulos Proximamente</h1>
+      
